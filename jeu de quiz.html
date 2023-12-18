@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="freeCodeCamp Accessibility Quiz practice project" />
+    <title>jeu de  Quiz</title>
+    <link rel="stylesheet" href="jeu de quiz.css" />
+    <script>
+      function envoyer() {
+        var nom = document.getElementById("student-name").value;
+        var email = document.getElementById("student-email").value;
+        var dateNaissance = document.getElementById("birth-date").value;
+        var q1 = document.querySelector('input[name="q1"]:checked');
+        var q2 = document.querySelector('input[name="q2"]:checked');
+        var q3 = document.querySelector('input[name="q3"]:checked');
+        var q4 = document.querySelector('input[name="q4"]:checked');
+        var customer = document.getElementById("customer").value;
+        var cssQ = document.getElementById("css-textarea").value;
+    
+   
+        if (nom && email && dateNaissance && q1 && q2 && q3 && q4 && customer && cssQ) {
+        
+    
+          alert("La formulaire est envoyée avec succès");
+        } else {
+       
+          alert("Veuillez remplir tous les champs du formulaire.");
+        }
+      }
+    </script>
+    
+      
+  </head>
+  <body>
+    <!--header-->
+    <header>
+      <h1>HTML/CSS Quiz</h1>
+      <nav>
+        <ul>
+          <li><a href="#student-info">INFO</a></li>
+          <li><a href="#html-questions">HTML</a></li>
+          <li><a href="#css-questions">CSS</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!--Informations-->
+    <main>
+      <form method="post" action="">
+        <section role="region" aria-labelledby="student-info">
+          <h2 id="student-info">Informations sur l'étudiant</h2>
+          <div class="info">
+            <label for="student-name">N & P:</label>
+            <input type="text" name="student-name" id="student-name" />
+          </div>
+          <div class="info">
+            <label for="student-email">Email:</label>
+            <input type="email" name="student-email" id="student-email" />
+          </div>
+          <div class="info">
+            <label for="birth-date">Date de naissance: <div class="sr-only"  ></div></label>
+            <input type="date" name="birth-date" id="birth-date" />
+          </div>
+        </section>
+<!--Questions HTML-->
+        <section role="region" aria-labelledby="html-questions">
+          <h2 id="html-questions">HTML</h2>
+<!--Q 1 HTML-->
+          <div class="question-block">
+            <p>1</p>
+            <fieldset class="question" name="html-question-one">
+              <legend>
+                L'élément "legend" représente un titre pour le contenu de son élément parent "fieldset"
+              </legend>
+              <ul class="answers-list">
+                <li>
+                  <label for="q1-a1">
+                    <input type="radio" id="q1-a1" name="q1" value="true" />
+                    Vrai
+                  </label>
+                </li>
+                <li>
+                  <label for="q1-a2">
+                    <input type="radio" id="q1-a2" name="q1" value="false" />
+                    Faux
+                  </label>
+                </li>
+              </ul>
+            </fieldset>
+          </div>
+<!--Q 2 HTML-->
+          <div class="question-block">
+            <p>2</p>
+            <fieldset class="question" name="html-question-two">
+              <legend>
+                L'élément de balisage "label" imbriqué dans un élément "input" doit avoir un attribut 'for' avec la même valeur que l'attribut 'id' de l'élément "input".
+              </legend>
+              <ul class="answers-list">
+                <li>
+                  <label for="q2-a1">
+                    <input type="radio" id="q2-a1" name="q2" value="true" />
+                    True
+                  </label>
+                </li>
+                <li>
+                  <label for="q2-a2">
+                    <input type="radio" id="q2-a2" name="q2" value="false" />
+                    False
+                  </label>
+                </li>
+              </ul>
+            </fieldset>
+          </div>
+<!--Q 3 HTML-->
+          <div class="question-block">
+            <p>3</p>
+            <fieldset class="question" name="html-question-one">
+              <legend>
+                L'attribut target="_blank" dans la balise "a" ouvre le lien dans une nouvelle fenêtre ou un nouvel onglet.
+              </legend>
+              <ul class="answers-list">
+                <li>
+                  <label for="q3-a1">
+                    <input type="radio" id="q3-a1" name="q3" value="true" />
+                    Vrai
+                  </label>
+                </li>
+                <li>
+                  <label for="q3-a2">
+                    <input type="radio" id="q3-a2" name="q3" value="false" />
+                    Faux
+                  </label>
+                </li>
+              </ul>
+            </fieldset>
+          </div>
+<!--Q 4 HTML-->
+          <div class="question-block">
+            <p>4</p>
+            <fieldset class="question" name="html-question-one">
+              <legend>
+                Les balises "header" et "footer" sont obligatoires dans chaque document HTML.
+              </legend>
+              <ul class="answers-list">
+                <li>
+                  <label for="q4-a1">
+                    <input type="radio" id="q4-a1" name="q4" value="true" />
+                    Vrai
+                  </label>
+                </li>
+                <li>
+                  <label for="q4-a2">
+                    <input type="radio" id="q4-a2" name="q4" value="false" />
+                    Faux
+                  </label>
+                </li>
+              </ul>
+            </fieldset>
+          </div>
+        </section>
+<!--Questions CSS-->
+        <section role="region" aria-labelledby="css-questions">
+          <h2 id="css-questions">CSS</h2>
+<!--Q 1 CSS-->
+          <div class="question-block">
+            <p>1</p>
+            <fieldset class="question" name="html-question-one">
+              <legend>
+                L'attribut "margin" peut être utilisé pour ajouter de l'espace à l'intérieur d'un élément.
+              </legend>
+              <ul class="answers-list">
+                <li>
+                  <label for="q1-a1">
+                    <input type="radio" id="q1-a1" name="q1" value="true" />
+                    Vrai
+                  </label>
+                </li>
+                <li>
+                  <label for="q1-a2">
+                    <input type="radio" id="q1-a2" name="q1" value="false" />
+                    Faux
+                  </label>
+                </li>
+              </ul>
+            </fieldset>
+          </div>
+<!--Q 2 CSS-->
+
+          <div class="question-block">
+            <p>2</p>
+            <fieldset class="question" name="html-question-one">
+              <legend>
+                La propriété "display: none;"" cache un élément, mais conserve son espace dans la mise en page.
+              </legend>
+              <ul class="answers-list">
+                <li>
+                  <label for="q2-a1">
+                    <input type="radio" id="q2-a1" name="q2" value="true" />
+                    Vrai
+                  </label>
+                </li>
+                <li>
+                  <label for="q2-a2">
+                    <input type="radio" id="q2-a2" name="q2" value="false" />
+                    Faux
+                  </label>
+                </li>
+              </ul>
+            </fieldset>
+          </div>
+<!--Q 3 CSS-->
+
+          <div class="question-block">
+            <p>3</p>
+            <fieldset class="question" name="html-question-one">
+              <legend>
+                La propriété "box-sizing: border-box;"" inclut la bordure et le rembourrage dans la largeur et la hauteur totales d'un élément.
+              </legend>
+              <ul class="answers-list">
+                <li>
+                  <label for="q3-a1">
+                    <input type="radio" id="q3-a1" name="q3" value="true" />
+                    Vrai
+                  </label>
+                </li>
+                <li>
+                  <label for="q3-a2">
+                    <input type="radio" id="q3-a2" name="q3" value="false" />
+                    Faux
+                  </label>
+                </li>
+              </ul>
+            </fieldset>
+          </div>
+<!--Q 4 CSS-->
+
+          <div class="question-block">
+            <p>4</p>
+            <fieldset class="question" name="html-question-one">
+              <legend>
+                La propriété "flex-direction" détermine la direction principale des conteneurs flexibles.
+              </legend>
+              <ul class="answers-list">
+                <li>
+                  <label for="q4-a1">
+                    <input type="radio" id="q4-a1" name="q4" value="true" />
+                    Vrai
+                  </label>
+                </li>
+                <li>
+                  <label for="q4-a2">
+                    <input type="radio" id="q4-a2" name="q4" value="false" />
+                    Faux
+                  </label>
+                </li>
+              </ul>
+            </fieldset>
+          </div>
+          <br/>
+<!-- Commentaires-->
+          <div class="formrow">
+            <div class="question-block">
+              <label for="customer">Êtes-vous un développeur frontend ?</label>
+            </div>
+            <div class="answer">
+              <select name="customer" id="customer" required>
+                <option value="">Sélectionnez une option</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+            <br/>
+            <div class="question-block">
+              <label for="css-textarea">Avez-vous des questions ?</label>
+            </div>
+            <div class="answer">
+              <textarea id="css-textarea" name="css-questions" rows="6" cols="24" placeholder="Ecrivez vos questions ici..."></textarea>
+            </div>
+          </div>
+        </section>
+        <button type="submit" onclick="envoyer()">Envoyer</button>
+      </form>
+    </main>
+    <br/>
+
+    <!--footer-->
+    <footer class="footer">
+      <legend class="footer-title"> &copy; <span>Isimm 2023/2024</span>
+      <a id="souha">Souha Jomaa/Monastir-Tunis</a>
+   
+    </legend>
+   
+  </footer>
+
+  </body>
+</html>
